@@ -7,7 +7,6 @@
  */
 var merge = function (nums1, m, nums2, n) {
     numsOneCopy = [];
-    if(n==0) return nums1;
     for (let i = 0; i < m; i++) {
         numsOneCopy[i] = nums1[i];
     }
