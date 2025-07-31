@@ -6,10 +6,7 @@
  * @return {void} Do not return anything, modify nums1 in-place instead.
  */
 var merge = function (nums1, m, nums2, n) {
-    numsOneCopy = [];
-    for (let i = 0; i < m; i++) {
-        numsOneCopy[i] = nums1[i];
-    }
+    numsOneCopy = nums1.slice(0,m);
     let p1=0;
     let p2=0;
     for (let i = 0; i < m + n; i++) {
