@@ -13,7 +13,7 @@ var MyLinkedList = function () {
  * @return {number}
  */
 MyLinkedList.prototype.get = function (index) {
-    if(index<0||index>=this.size) return -1;
+    if (index < 0 || index >= this.size) return -1;
     let curr = this.head;
     let i = 0;
     while (i < index) {
@@ -61,7 +61,7 @@ MyLinkedList.prototype.addAtTail = function (val) {
  * @return {void}
  */
 MyLinkedList.prototype.addAtIndex = function (index, val) {
-    if(index<0||index>this.size) return;
+    if (index < 0 || index > this.size) return;
     if (index == 0) {
         this.addAtHead(val);
     }
@@ -87,7 +87,7 @@ MyLinkedList.prototype.addAtIndex = function (index, val) {
  * @return {void}
  */
 MyLinkedList.prototype.deleteAtIndex = function (index) {
-    if(index<0||index>=this.size) return;
+    if (index < 0 || index >= this.size) return;
     if (index == 0) {
         this.head = this.head.next;
     }
