@@ -11,7 +11,7 @@
  */
 var middleNode = function (head) {
     let curr = head;
-    let size = 0;
+    let size = 1;
     while (curr.next !== null) {
         curr = curr.next;
         size++;
@@ -21,6 +21,6 @@ var middleNode = function (head) {
     for (i = 0; i < end; i++) {
         res = res.next;
     }
-    return size % 2 == 0 ? res : res.next;
+    return res;
 
 };
