@@ -13,7 +13,7 @@
 var hasCycle = function (head) {
     let curr = head;
     let set = new Set();
-    while (curr != null) {
+    while (curr) {
         if (set.has(curr)) {
             return true;
         }
