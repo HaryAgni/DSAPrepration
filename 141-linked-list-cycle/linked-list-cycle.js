@@ -13,8 +13,8 @@
 var hasCycle = function (head) {
     let slow = head;
     let fast = head;
-    while (slow && fast && fast.next) {
-        if (slow.next == fast.next.next) {
+    while (fast && fast.next) {
+        if (slow == fast.next.next) {
             return true;
         }
         else {
