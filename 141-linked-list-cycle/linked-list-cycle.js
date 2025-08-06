@@ -10,16 +10,16 @@
  * @param {ListNode} head
  * @return {boolean}
  */
-var hasCycle = function(head) {
+var hasCycle = function (head) {
     let curr = head;
-    let arr = [curr];
-    while(curr!=null){
-        curr = curr.next;
-        if(arr.includes(curr)){
+    let set = new Set();
+    while (curr != null) {
+        if (set.has(curr)) {
             return true;
         }
-        else{
-            arr.push(curr);
+        else {
+            set.add(curr);
+            curr = curr.next;
         }
     }
     return false;
