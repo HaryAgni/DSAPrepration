@@ -10,16 +10,14 @@
  * @return {ListNode}
  */
 var deleteDuplicates = function(head) {
-    let sentinel = new ListNode(-Infinity);
-    sentinel.next = head;
-    let prev = sentinel;
-    while(prev && prev.next){
-        if(prev.val == prev.next.val){
-            prev.next = prev.next.next;
+    let curr = head;
+    while(head && curr.next){
+        if(curr.val == curr.next.val){
+            curr.next = curr.next.next;
         }
         else{
-            prev = prev.next;
+            curr = curr.next;
         }
     }
-    return sentinel.next;
+    return head;
 };
