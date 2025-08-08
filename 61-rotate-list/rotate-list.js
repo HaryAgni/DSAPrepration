@@ -18,11 +18,8 @@ var rotateRight = function (head, k) {
         size++;
         curr = curr.next;
     }
-    if(k==size) return head;
-    if (k > size) {
-        k = k % size;
-    }
-    if(k==0) return head;
+    k = k % size;
+    if (k == 0) return head;
     let slow = head;
     let fast = head;
     for (i = 0; i <= k; i++) {
@@ -35,8 +32,7 @@ var rotateRight = function (head, k) {
     let temp = slow.next;
     let ans = temp;
     slow.next = null;
-    let prev = null;
-    while(temp.next){
+    while (temp.next) {
         temp = temp.next;
     }
     temp.next = head;
