@@ -19,15 +19,14 @@ var rotateRight = function (head, k) {
         tail = tail.next;
     }
     k = k % size;
-    if (k == 0) return head;
     let stepsToNewTail = size - k - 1;
     let newTail = head;
     for (i = 0; i < stepsToNewTail; i++) {
         newTail = newTail.next;
     }
+    tail.next = head;
     let newHead = newTail.next;
     newTail.next = null;
-    tail.next = head;
     return newHead;
 };
 
