@@ -3,17 +3,17 @@
  * @return {number}
  */
 var lengthOfLastWord = function (s) {
-    let endIndex = 0;
+    let endIndex = s.length - 1;
     let startIndex = 0;
     for (i = s.length - 1; i > 0; i--) {
         if (s[i] == " " && s[i - 1] !== " ") {
-            endIndex = i;
+            endIndex = i - 1;
         } if (s[i] !== " " && s[i - 1] == " ") {
             startIndex = i;
             break;
         }
     }
-    return startIndex < endIndex ? s.slice(startIndex, endIndex).length : s.slice(startIndex).length;
+    return endIndex - startIndex + 1;
     // let wordIndex = 0;
     // for (i = 0; i < s.length - 1; i++) {
     //     if (s[i] == " " && s[i + 1] !== " ") {
