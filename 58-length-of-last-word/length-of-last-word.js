@@ -8,11 +8,7 @@ var lengthOfLastWord = function (s) {
     for (i = s.length - 1; i > 0; i--) {
         if (s[i] == " " && s[i - 1] !== " ") {
             endIndex = i;
-            break;
-        }
-    }
-    for (i = s.length - 1; i > 0; i--) {
-        if (s[i] !== " " && s[i - 1] == " ") {
+        } if (s[i] !== " " && s[i - 1] == " ") {
             startIndex = i;
             break;
         }
