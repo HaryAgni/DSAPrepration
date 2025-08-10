@@ -4,7 +4,6 @@
  */
 var maxFreqSum = function (s) {
     let vowels = new Set("aeiou");
-    let consonants = new Set("bcdfghjklmnpqrstvwxyz")
     let obj = {};
     for (let i = 0; i < s.length; i++) {
         if (obj[s[i]]) {
@@ -20,7 +19,7 @@ var maxFreqSum = function (s) {
         if (vowels.has(s[i]) && obj[s[i]] > vowelMax) {
             vowelMax = obj[s[i]];
         }
-        else if (consonants.has(s[i]) && obj[s[i]] > consonantMax) {
+        else if (!vowels.has(s[i]) && obj[s[i]] > consonantMax) {
             consonantMax = obj[s[i]];
         }
     }
