@@ -16,11 +16,11 @@ var maxFreqSum = function (s) {
     let vowelMax = 0;
     let consonantMax = 0;
     for (i = 0; i < s.length; i++) {
-        if (vowels.has(s[i]) && obj[s[i]] > vowelMax) {
-            vowelMax = obj[s[i]];
+        if (vowels.has(s[i])) {
+            vowelMax = Math.max(vowelMax, obj[s[i]]);
         }
-        else if (!vowels.has(s[i]) && obj[s[i]] > consonantMax) {
-            consonantMax = obj[s[i]];
+        else {
+            consonantMax = Math.max(consonantMax, obj[s[i]]);
         }
     }
     return vowelMax + consonantMax;
