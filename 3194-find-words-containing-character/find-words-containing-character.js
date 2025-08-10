@@ -4,18 +4,13 @@
  * @return {number[]}
  */
 var findWordsContaining = function (words, x) {
-    let str = words.toString();
-    let currIndex = -1;
     let res = [];
-    let j = 0;
-    for (i = 0; i < str.length; i++) {
-        if (str[i] == x && currIndex == -1) {
-            currIndex = j;
-            res.push(currIndex);
-        }
-        else if (str[i] == ',') {
-            j++;
-            currIndex = -1;
+    for (i = 0; i < words.length; i++) {
+        for (j = 0; j < words[i].length; j++) {
+            if (words[i][j] == x) {
+                res.push(i);
+                break;
+            }
         }
     }
     return res;
