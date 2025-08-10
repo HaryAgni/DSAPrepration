@@ -4,17 +4,10 @@
  * @return {number}
  */
 var numJewelsInStones = function (jewels, stones) {
-    let sum = 0;
-    let obj = {};
+    let count = 0;
+    let jSet = new Set(jewels);
     for (i = 0; i < stones.length; i++) {
-        if (obj[stones[i]]) {
-            obj[stones[i]]++;
-        }
-        else { obj[stones[i]] = 1; }
+        if (jSet.has(stones[i])) count++;
     }
-    console.log(obj);
-    for (i = 0; i < jewels.length; i++) {
-        sum = sum + (obj[jewels[i]] || 0);
-    }
-    return sum;
+    return count;
 };
