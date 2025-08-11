@@ -10,10 +10,10 @@ var balancedStringSplit = function (s) {
         if (s[i] == "L") {
             l++;
         }
-        else if (s[i] == "R") {
+        else {
             r++;
         }
-        if (l !== 0 && r !== 0 && l == r) {
+        if (l && r && l == r) {
             count++;
             l = 0;
             r = 0;
