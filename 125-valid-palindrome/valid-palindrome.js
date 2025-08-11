@@ -6,10 +6,10 @@ var isPalindrome = function (s) {
     if (s.length == 1) return true;
     s = s.toLowerCase();
     let set = new Set("abcdefghijklmnopqrstuvwxyz1234567890");
-    let str = "";
+    let str = [];
     for (i = 0; i < s.length; i++) {
         if (set.has(s[i])) {
-            str += s[i].toLowerCase();
+            str.push(s[i].toLowerCase());
         }
     }
     let l = 0;
