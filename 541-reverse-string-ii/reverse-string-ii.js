@@ -4,20 +4,17 @@
  * @return {string}
  */
 var reverseStr = function (s, k) {
-    if (s.length <= 1) return s;
-    if (k > s.length) {
-        k = s.length;
+    s = s.split('');
+    for (i = 0; i < s.length; i += k * 2) {
+        let l = i;
+        let r = Math.min(i + k - 1, s.length - 1);
+        while (l < r) {
+            let temp = s[l];
+            s[l] = s[r];
+            s[r] = temp;
+            l++;
+            r--;
+        }
     }
-    let l = 0;
-    let r = k - 1;
-    let arr = s.split('');
-    while (l < r) {
-        let temp = arr[l];
-        arr[l] = arr[r];
-        arr[r] = temp;
-        l++;
-        r--;
-    }
-    let res = arr.slice(0, (2 * k)).join('') + reverseStr(arr.slice(2 * k).join(''), k);
-    return res;
+    return s.join("");
 };
