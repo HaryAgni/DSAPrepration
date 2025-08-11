@@ -9,13 +9,13 @@ var isPalindrome = function (s) {
     while (l < r) {
         let a = s[l].toLowerCase();
         let b = s[r].toLowerCase();
-        if (set.has(a) && set.has(b) && a !== b) return false;
-        if ((set.has(a) && set.has(b)) || (!set.has(a) && !set.has(b))) {
+        if (!set.has(a)) l++;
+        else if (!set.has(b)) r--;
+        else if (a !== b) return false;
+        else { 
             l++;
             r--;
         }
-        else if (!set.has(a)) l++;
-        else if (!set.has(b)) r--;
     }
     return true;
 };
