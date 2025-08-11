@@ -12,7 +12,6 @@ var isPalindrome = function (s) {
             str += s[i].toLowerCase();
         }
     }
-    console.log(str)
     let l = 0;
     let r = str.length - 1;
     while (l < r) {
