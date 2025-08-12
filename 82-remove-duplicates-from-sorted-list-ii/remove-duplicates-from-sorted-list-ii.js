@@ -20,15 +20,13 @@ var deleteDuplicates = function (head) {
     while (curr && next) {
         if (curr.val == next.val || repeatedNode.val == curr.val) {
             repeatedNode = curr;
-            next = next.next;
-            curr = curr.next;
         }
         else {
             prev.next = curr;
             prev = curr;
-            curr = next;
-            next = next.next
         }
+        next = next.next;
+        curr = curr.next;
 
     }
     prev.next = repeatedNode.val !== curr.val ? curr : null;
