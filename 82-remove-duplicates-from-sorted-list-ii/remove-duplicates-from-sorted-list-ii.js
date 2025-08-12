@@ -16,16 +16,14 @@ var deleteDuplicates = function (head) {
     node.next = head;
     let prev = node;
     let curr = head;
-    let next = head.next;
-    while (curr && next) {
-        if (curr.val == next.val || repeatedNode.val == curr.val) {
+    while (curr && curr.next) {
+        if (curr.val == curr.next.val || repeatedNode.val == curr.val) {
             repeatedNode = curr;
         }
         else {
             prev.next = curr;
             prev = curr;
         }
-        next = next.next;
         curr = curr.next;
 
     }
