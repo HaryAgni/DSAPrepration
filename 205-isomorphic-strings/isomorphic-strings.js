@@ -4,7 +4,6 @@
  * @return {boolean}
  */
 var isIsomorphic = function (s, t) {
-    if (s.length !== t.length) return false;
     let obj = {};
     let set = new Set();
     for (let i = 0; i < s.length; i++) {
