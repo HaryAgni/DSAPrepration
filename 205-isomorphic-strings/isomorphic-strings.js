@@ -4,16 +4,14 @@
  * @return {boolean}
  */
 var isIsomorphic = function (s, t) {
-    let obj = {};
-    let set = new Set();
+    let sObj = {};
+    let tObj = {};
     for (let i = 0; i < s.length; i++) {
-        if (obj[s[i]] && obj[s[i]] !== t[i]) return false;
-        else {
-            if (!obj[s[i]] && set.has(t[i])) return false;
-            obj[s[i]] = t[i];
-            set.add(t[i]);
+        if (!sObj[s[i]] && !tObj[t[i]]) {
+            sObj[s[i]] = t[i];
+            tObj[t[i]] = s[i];
         }
-
+        else if (sObj[s[i]] !== t[i] || tObj[t[i]] !== s[i]) return false;
     }
     return true;
 };
