@@ -9,7 +9,7 @@ var isValid = function (s) {
         if (!map[s[i]]) {
             stack.push(s[i]);
         }
-        else if (map[s[i]] !== stack.pop()) return false;
+        else if (!stack.pop || map[s[i]] !== stack.pop()) return false;
     }
     return stack.length == 0;
 };
