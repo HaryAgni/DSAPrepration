@@ -12,7 +12,6 @@ var largestGoodInteger = function (num) {
         else {
             prevStr = num[i];
         }
-        console.log(prevStr)
         if (prevStr.length == 3) {
             res = Number(res) > Number(prevStr) ? res : prevStr;
         }
