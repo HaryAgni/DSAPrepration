@@ -35,7 +35,7 @@ MyStack.prototype.top = function () {
     for (let i = 0; i < n - 1; i++) {
         this.q2.push(this.q1.shift());
     }
-    let res = this.q1.shift();
+    let res = this.q1[0];
     this.q2.push(res);
     this.q1 = this.q2;
     this.q2 = [];
