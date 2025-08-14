@@ -4,18 +4,18 @@
  */
 var largestGoodInteger = function (num) {
     let prevStr = "";
-    let currStr = "";
+    let res = "";
     for (let i = 0; i < num.length; i++) {
-        if (currStr !== "" && num[i] == currStr[0]) {
-            currStr += num[i];
+        if (prevStr && prevStr[0] == num[i]) {
+            prevStr += num[i];
         }
         else {
-            currStr = num[i];
+            prevStr = num[i];
         }
-        if (currStr.length == 3) {
-            prevStr = Number(prevStr) > Number(currStr) ? prevStr : currStr;
-            currStr = "";
+        console.log(prevStr)
+        if (prevStr.length == 3) {
+            res = Number(res) > Number(prevStr) ? res : prevStr;
         }
     }
-    return prevStr;
+    return res;
 };
