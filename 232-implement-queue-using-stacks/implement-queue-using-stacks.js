@@ -16,40 +16,34 @@ MyQueue.prototype.push = function (x) {
  * @return {number}
  */
 MyQueue.prototype.pop = function () {
-    let n = this.s1.length;
-    for (let i = 0; i < n - 1; i++) {
-        this.s2.push(this.s1.pop());
+    if (this.s2.length == 0) {
+        let n = this.s1.length;
+        for (let i = 0; i < n; i++) {
+            this.s2.push(this.s1.pop());
+        }
     }
-    let res = this.s1.pop();
-    n = this.s2.length;
-    for (let i = 0; i < n; i++) {
-        this.s1.push(this.s2.pop());
-    }
-    return res;
+
+    return this.s2.pop();
 };
 
 /**
  * @return {number}
  */
 MyQueue.prototype.peek = function () {
-    let n = this.s1.length;
-    for (let i = 0; i < n - 1; i++) {
-        this.s2.push(this.s1.pop());
+    if (this.s2.length == 0) {
+        let n = this.s1.length;
+        for (let i = 0; i < n; i++) {
+            this.s2.push(this.s1.pop());
+        }
     }
-    let res = this.s1.pop();
-    this.s1.push(res);
-    n = this.s2.length;
-    for (let i = 0; i < n; i++) {
-        this.s1.push(this.s2.pop());
-    }
-    return res;
+    return this.s2[this.s2.length - 1];
 };
 
 /**
  * @return {boolean}
  */
 MyQueue.prototype.empty = function () {
-    return this.s1.length == 0;
+    return this.s1.length + this.s2.length == 0;
 };
 
 /** 
