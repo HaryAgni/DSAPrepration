@@ -3,7 +3,6 @@
  * @return {boolean}
  */
 var isValid = function (s) {
-    if (s.length <= 1) return false;
     let map = { '}': '{', ')': '(', ']': '[' };
     let stack = [];
     for (let i = 0; i < s.length; i++) {
