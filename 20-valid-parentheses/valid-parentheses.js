@@ -1,0 +1,16 @@
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+var isValid = function (s) {
+    if (s.length <= 1) return false;
+    let map = { '}': '{', ')': '(', ']': '[' };
+    let stack = [];
+    for (let i = 0; i < s.length; i++) {
+        if (!map[s[i]]) {
+            stack.push(s[i]);
+        }
+        else if (map[s[i]] !== stack.pop()) return false;
+    }
+    return stack.length == 0;
+};
