@@ -12,15 +12,14 @@ var nextGreaterElement = function (nums1, nums2) {
             while (nums2[index] !== nums1[i]) {
                 index++;
             }
-            let temp = nums2[index];
+            let temp = -1;
             for (let j = index + 1; j < nums2.length; j++) {
-                temp = Math.max(nums2[j], temp);
-                if (temp > nums1[i]) {
-                    res.push(temp);
+                if (nums2[j] > nums1[i]) {
+                    temp = nums2[j];
                     break;
                 }
             }
-            if (temp == nums1[i]) res.push(-1);
+            res.push(temp);
         }
     }
     return res;
