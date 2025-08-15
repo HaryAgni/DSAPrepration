@@ -7,15 +7,11 @@ var removeOuterParentheses = function (s) {
     let res = "";
     for (let i = 0; i < s.length; i++) {
         if (s[i] == '(') {
-            if (count !== 0) {
-                res += s[i];
-            }
+            if (count !== 0) res += s[i];
             count++;
         }
         else {
-            if (count !== 1) {
-                res += s[i];
-            }
+            if (count !== 1) res += s[i];
             count--;
         }
     }
