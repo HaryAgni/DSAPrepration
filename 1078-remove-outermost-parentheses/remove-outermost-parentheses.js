@@ -3,21 +3,21 @@
  * @return {string}
  */
 var removeOuterParentheses = function (s) {
-    let s1 = [];
-    let s2 = [];
+    let outer = 0;
+    let inner = 0;
     let res = "";
     for (let i = 0; i < s.length; i++) {
         if (s[i] == '(') {
-            if (s1.length == 0) s1.push(s[i]);
+            if (outer == 0) outer++;
             else {
-                s2.push(s[i]);
+                inner++;
                 res += s[i];
             }
         }
         else {
-            if (s2.length == 0) s1.pop();
+            if (inner == 0) outer--;
             else {
-                s2.pop();
+                inner--;
                 res += s[i];
             }
         }
