@@ -24,7 +24,6 @@ var nextGreaterElement = function (nums1, nums2) {
             map[nums2[i]] = -1;
         }
     }
-    console.log(map);
     let res = [];
     for (let i = 0; i < nums1.length; i++) {
         res.push(map[nums1[i]]);
