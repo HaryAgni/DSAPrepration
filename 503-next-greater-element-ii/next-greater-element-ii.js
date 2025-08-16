@@ -4,18 +4,18 @@
  */
 var nextGreaterElements = function (nums) {
     let stack = [];
-    nums = [...nums, ...nums];
-    let res = Array(nums.length).fill(-1);
-    for (let i = nums.length - 1; i >= 0; i--) {
+    let res = Array(nums.length * 2).fill(-1);
+    for (let i = (nums.length * 2) - 1; i >= 0; i--) {
+        let index = i % nums.length;
         while (stack.length) {
             let top = stack[stack.length - 1];
-            if (top > nums[i]) {
+            if (top > nums[index]) {
                 res[i] = top;
                 break;
             }
             stack.pop();
         }
-        stack.push(nums[i]);
+        stack.push(nums[index]);
     }
-    return res.slice(0, nums.length / 2);
+    return res.slice(0, nums.length);
 };
