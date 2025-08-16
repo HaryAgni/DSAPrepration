@@ -10,12 +10,12 @@ var nextGreaterElements = function (nums) {
         while (stack.length) {
             let top = stack[stack.length - 1];
             if (top > nums[index]) {
-                res[i] = top;
+                res[index] = top;
                 break;
             }
             stack.pop();
         }
         stack.push(nums[index]);
     }
-    return res.slice(0, nums.length);
+    return res;
 };
