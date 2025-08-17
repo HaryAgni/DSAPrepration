@@ -31,6 +31,7 @@ var orangesRotting = function (grid) {
             queue.push([x + 1, y, level + 1]);
         }
         maxLevel = Math.max(maxLevel, level);
+
     }
     for (let i = 0; i < m; i++) {
         for (let j = 0; j < n; j++) {
