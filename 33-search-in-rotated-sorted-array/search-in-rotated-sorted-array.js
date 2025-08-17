@@ -14,7 +14,7 @@ var search = function (nums, target) {
         else if (nums[mid] > nums[end]) start++;
         else end--;
     }
-    if (target >= nums[0] && target <= nums[mid]) {
+    if (target >= nums[0] && target < nums[mid]) {
         start = 0;
         end = mid - 1;
     }
