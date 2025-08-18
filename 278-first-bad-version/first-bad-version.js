@@ -23,11 +23,7 @@ var solution = function (isBadVersion) {
         while (start < end) {
             let mid = Math.floor((start + end) / 2);
             let isMidBad = isBadVersion(mid);
-            let isNextBad = isBadVersion(mid + 1);
-            if (!isMidBad && isNextBad) {
-                return mid + 1;
-            }
-            else if (isMidBad) {
+            if (isMidBad) {
                 end = mid;
             }
             else start = mid + 1;
