@@ -13,5 +13,5 @@ var findMin = function (nums) {
         }
         else end = mid;
     }
-    return nums[start];
+    return nums[end];
 };
