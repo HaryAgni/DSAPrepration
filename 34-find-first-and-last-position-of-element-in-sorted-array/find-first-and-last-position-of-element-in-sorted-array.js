@@ -20,11 +20,9 @@ var searchRange = function (nums, target) {
     if (flag) {
         start = mid;
         end = mid;
-        while (nums[start] == target || nums[end] == target) {
-            if (nums[start] == target) start--;
-            if (nums[end] == target) end++;
-        }
-        return [start + 1, end - 1];
+        while (start > 0 && nums[start - 1] == target) start--;
+        while (end < nums.length - 1 && nums[end + 1] == target) end++;
+        return [start, end];
     }
     return [-1, -1];
 };
