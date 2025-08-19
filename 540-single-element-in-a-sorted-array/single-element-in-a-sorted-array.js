@@ -5,7 +5,7 @@
 var singleNonDuplicate = function (nums) {
     let start = 0;
     let end = nums.length - 1;
-    while (start < end) {
+    while (start <= end) {
         let mid = start + Math.floor((end - start) / 2);
         if (nums[mid] == nums[mid + 1]) {
             let leftCount = mid - start;
@@ -19,5 +19,4 @@ var singleNonDuplicate = function (nums) {
         }
         else return nums[mid];
     }
-    return nums[start];
 };
