@@ -15,6 +15,5 @@ var findClosestElements = function (arr, k, x) {
         }
         else end = mid;
     }
-
     return arr.slice(start, start + k);
 };
