@@ -3,21 +3,22 @@
  * @return {number}
  */
 var maxFreqSum = function (s) {
-    let vowels = new Set("aeiou");
-    let obj = {};
+    let set = new Set('aeiou');
+    let vowels = {};
+    let consonant = {};
     for (let i = 0; i < s.length; i++) {
-        obj[s[i]] = obj[s[i]] ? ++obj[s[i]] : 1;
+        if (set.has(s[i])) vowels[s[i]] = vowels[s[i]] ? ++vowels[s[i]] : 1;
+        else consonant[s[i]] = consonant[s[i]] ? ++consonant[s[i]] : 1;
     }
-    let vowelMax = 0;
-    let consonantMax = 0;
-    let objKeys = Object.keys(obj);
-    for (i = 0; i < objKeys.length; i++) {
-        if (vowels.has(objKeys[i])) {
-            vowelMax = Math.max(vowelMax, obj[objKeys[i]]);
-        }
-        else {
-            consonantMax = Math.max(consonantMax, obj[objKeys[i]]);
-        }
+    let vMax = 0;
+    let cMax = 0;
+    let vKeys = Object.keys(vowels);
+    let cKeys = Object.keys(consonant);
+    for (let i = 0; i < vKeys.length; i++) {
+        vMax = Math.max(vMax, vowels[vKeys[i]]);
     }
-    return vowelMax + consonantMax;
+    for (let i = 0; i < cKeys.length; i++) {
+        cMax = Math.max(cMax, consonant[cKeys[i]]);
+    }
+    return vMax + cMax;
 };
