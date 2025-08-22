@@ -5,9 +5,10 @@
  */
 var findWordsContaining = function (words, x) {
     let res = [];
-    for (i = 0; i < words.length; i++) {
-        for (j = 0; j < words[i].length; j++) {
-            if (words[i][j] == x) {
+    for (let i = 0; i < words.length; i++) {
+        let word = words[i];
+        for (let j = 0; j < word.length; j++) {
+            if (word[j] == x) {
                 res.push(i);
                 break;
             }
