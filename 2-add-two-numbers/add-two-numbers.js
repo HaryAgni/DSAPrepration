@@ -11,19 +11,21 @@
  * @return {ListNode}
  */
 var addTwoNumbers = function (l1, l2) {
-    let head = new ListNode(1);
-    let node = head;
-    let carry = 0;
     let p1 = l1;
     let p2 = l2;
-    while (p1 || p2 || carry !== 0) {
-        let sum = (p1 && p1.val) + (p2 && p2.val) + carry;
+    let dummy = new ListNode();
+    let curr = dummy;
+    let carry = 0;
+    while (p1 || p2 || carry) {
+        let a = p1 ? p1.val : 0;
+        let b = p2 ? p2.val : 0;
+        let sum = a + b + carry;
         let rem = sum % 10;
         carry = Math.floor(sum / 10);
-        node.next = new ListNode(rem);
-        node = node.next;
-        p1 = p1 ? p1.next : null;
-        p2 = p2 ? p2.next : null;
+        curr.next = new ListNode(rem);
+        curr = curr.next;
+        p1 = p1 && p1.next;
+        p2 = p2 && p2.next;
     }
-    return head.next;
+    return dummy.next;
 };
