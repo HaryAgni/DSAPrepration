@@ -4,14 +4,14 @@
  * @return {boolean}
  */
 var isIsomorphic = function (s, t) {
-    let sObj = {};
-    let tObj = {};
+    let sMap = {};
+    let tMap = {};
     for (let i = 0; i < s.length; i++) {
-        if (!sObj[s[i]] && !tObj[t[i]]) {
-            sObj[s[i]] = t[i];
-            tObj[t[i]] = s[i];
+        if (!sMap[s[i]] && !tMap[t[i]]) {
+            sMap[s[i]] = t[i];
+            tMap[t[i]] = s[i];
         }
-        else if (sObj[s[i]] !== t[i] || tObj[t[i]] !== s[i]) return false;
+        else if (sMap[s[i]] !== t[i] || tMap[t[i]] !== s[i]) return false;
     }
     return true;
 };
