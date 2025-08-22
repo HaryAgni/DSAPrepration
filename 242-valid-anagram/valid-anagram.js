@@ -5,13 +5,13 @@
  */
 var isAnagram = function (s, t) {
     if (s.length !== t.length) return false;
-    let sObj = {}
+    let map = {};
     for (let i = 0; i < s.length; i++) {
-        sObj[s[i]] = sObj[s[i]] ? ++sObj[s[i]] : 1;
+        map[s[i]] = map[s[i]] ? ++map[s[i]] : 1;
     }
     for (let i = 0; i < t.length; i++) {
-        if (!sObj[t[i]] || sObj[t[i]] == 0) return false;
-        sObj[t[i]]--;
+        if (map[t[i]]) map[t[i]]--;
+        else return false;
     }
     return true;
 };
