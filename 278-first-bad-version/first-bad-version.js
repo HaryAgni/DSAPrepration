@@ -21,11 +21,9 @@ var solution = function (isBadVersion) {
         let start = 1;
         let end = n;
         while (start < end) {
-            let mid = Math.floor((start + end) / 2);
-            let isMidBad = isBadVersion(mid);
-            if (isMidBad) {
-                end = mid;
-            }
+            let mid = start + Math.floor((end - start) / 2);
+            let isBad = isBadVersion(mid);
+            if (isBad) end = mid;
             else start = mid + 1;
         }
         return start;
