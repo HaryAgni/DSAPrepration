@@ -3,40 +3,40 @@
  * @return {number}
  */
 var orangesRotting = function (grid) {
-    let m = grid.length;
-    let n = grid[0].length;
-    let queue = [];
-    for (let i = 0; i < m; i++) {
-        for (let j = 0; j < n; j++) {
-            if (grid[i][j] == 2) queue.push([i, j, 0]);
+    let n = grid.length - 1;
+    let m = grid[0].length - 1;
+    let q = [];
+    for (let i = 0; i <= n; i++) {
+        for (let j = 0; j <= m; j++) {
+            if (grid[i][j] == 2) q.push([i, j, 0]);
         }
     }
-    let maxLevel = 0;
-    while (queue.length) {
-        let [x, y, level] = queue.shift();
-        if (y > 0 && grid[x][y - 1] == 1) {
-            grid[x][y - 1] = 2;
-            queue.push([x, y - 1, level + 1]);
-        }
-        if (y < n - 1 && grid[x][y + 1] == 1) {
-            grid[x][y + 1] = 2;
-            queue.push([x, y + 1, level + 1]);
-        }
+
+    let minutes = 0;
+    while (q.length) {
+        let [x, y, currMinute] = q.shift();
         if (x > 0 && grid[x - 1][y] == 1) {
             grid[x - 1][y] = 2;
-            queue.push([x - 1, y, level + 1]);
+            q.push([x - 1, y, currMinute + 1]);
         }
-        if (x < m - 1 && grid[x + 1][y] == 1) {
+        if (x < n && grid[x + 1][y] == 1) {
             grid[x + 1][y] = 2;
-            queue.push([x + 1, y, level + 1]);
+            q.push([x + 1, y, currMinute + 1]);
         }
-        maxLevel = level;
-
+        if (y > 0 && grid[x][y - 1] == 1) {
+            grid[x][y - 1] = 2;
+            q.push([x, y - 1, currMinute + 1]);
+        }
+        if (y < m && grid[x][y + 1] == 1) {
+            grid[x][y + 1] = 2;
+            q.push([x, y + 1, currMinute + 1]);
+        }
+        minutes = currMinute;
     }
-    for (let i = 0; i < m; i++) {
-        for (let j = 0; j < n; j++) {
+    for (let i = 0; i <= n; i++) {
+        for (let j = 0; j <= m; j++) {
             if (grid[i][j] == 1) return -1;
         }
     }
-    return maxLevel;
+    return minutes;
 };
