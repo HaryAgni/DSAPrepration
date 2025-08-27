@@ -10,6 +10,7 @@ var twoSum = function (nums, target) {
         let sum = nums[start] + nums[end];
         if (sum > target) end--;
         else if (sum < target) start++;
+        
         else return [start + 1, end + 1];
     }
 };
