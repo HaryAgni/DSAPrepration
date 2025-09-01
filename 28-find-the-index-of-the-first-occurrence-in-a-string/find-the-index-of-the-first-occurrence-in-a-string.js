@@ -20,6 +20,7 @@ var strStr = function (haystack, needle) {
             else i = lps[i - 1];
         }
     }
+    
     i = 0;
     j = 0;
     while (i < haystack.length) {
