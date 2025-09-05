@@ -5,14 +5,14 @@
  */
 var characterReplacement = function (s, k) {
     let i = 0;
-    let map = {};
+    let arr = Array(26).fill(0);
     let maxWindow = 0;
     let maxCount = 0;
     for (let j = 0; j < s.length; j++) {
-        map[s[j]] = map[s[j]] ? ++map[s[j]] : 1;
-        maxCount = Math.max(maxCount, map[s[j]]);
+        arr[s.charCodeAt(j) - 65]++;
+        maxCount = Math.max(maxCount, arr[s.charCodeAt(j) - 65]);
         if ((j - i + 1) - maxCount > k) {
-            map[s[i]]--;
+            arr[s.charCodeAt(i) - 65]--;
             i++;
         }
         maxWindow = Math.max(maxWindow, j - i + 1);
