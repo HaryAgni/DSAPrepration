@@ -11,10 +11,10 @@ var characterReplacement = function (s, k) {
         map[s[j]] = map[s[j]] ? ++map[s[j]] : 1;
         let totalCount = 0;
         let maxCount = 0;
-        Object.keys(map).forEach(key => {
+        for (key in map) {
             totalCount += map[key];
             maxCount = Math.max(maxCount, map[key]);
-        });
+        }
         if (totalCount - maxCount > k) {
             map[s[i]]--;
             i++;
