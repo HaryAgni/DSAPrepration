@@ -1,0 +1,25 @@
+/**
+ * @param {string} s
+ * @param {number} k
+ * @return {number}
+ */
+var characterReplacement = function (s, k) {
+    let i = 0;
+    let map = {};
+    let maxWindow = 0;
+    for (let j = 0; j < s.length; j++) {
+        map[s[j]] = map[s[j]] ? ++map[s[j]] : 1;
+        let totalCount = 0;
+        let maxCount = 0;
+        Object.keys(map).forEach(key => {
+            totalCount += map[key];
+            maxCount = Math.max(maxCount, map[key]);
+        });
+        if (totalCount - maxCount > k) {
+            map[s[i]]--;
+            i++;
+        }
+        maxWindow = Math.max(maxWindow, j - i + 1);
+    }
+    return maxWindow;
+};
