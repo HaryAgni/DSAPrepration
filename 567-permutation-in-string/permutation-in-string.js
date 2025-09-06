@@ -13,7 +13,6 @@ var checkInclusion = function (s1, s2) {
         hashA[s1.charCodeAt(i) - base]++;
         hashB[s2.charCodeAt(i) - base]++;
     }
-
     let i = 0;
     let j = i + n - 1;
     while (j < m) {
