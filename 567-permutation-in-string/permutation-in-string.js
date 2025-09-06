@@ -29,4 +29,4 @@ var isHashSame = function (hashA, hashB) {
         if (hashA[i] !== hashB[i]) return false;
     }
     return true;
-}
+};
