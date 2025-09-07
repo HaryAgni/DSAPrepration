@@ -6,11 +6,13 @@ var maxFreqSum = function (s) {
     let set = new Set('aeiou');
     let vMax = 0;
     let cMax = 0;
-    let map = {};
+    let base = 'a'.charCodeAt(0);
+    let freq = Array(26).fill(0);
     for (let i = 0; i < s.length; i++) {
-        map[s[i]] = (map[s[i]] || 0) + 1;
-        if (set.has(s[i])) vMax = Math.max(vMax, map[s[i]]);
-        else cMax = Math.max(cMax, map[s[i]]);
+        let index = s.charCodeAt(i) - base;
+        freq[index]++;
+        if (set.has(s[i])) vMax = Math.max(vMax, freq[index]);
+        else cMax = Math.max(cMax, freq[index]);
     }
     return vMax + cMax;
 };
