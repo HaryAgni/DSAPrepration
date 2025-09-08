@@ -12,7 +12,7 @@ var isIsomorphic = function (s, t) {
             sMap[s[i]] = t[i];
             tMap[t[i]] = s[i];
         }
-        else if ((sMap[s[i]] && sMap[s[i]] !== t[i]) || (tMap[t[i]] && tMap[t[i]] !== s[i])) return false;
+        else if (sMap[s[i]] !== t[i] || tMap[t[i]] !== s[i]) return false;
     }
     return true;
 };
