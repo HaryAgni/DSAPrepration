@@ -12,6 +12,7 @@
  */
 var addTwoNumbers = function (l1, l2) {
     let p1 = l1;
+    
     let p2 = l2;
     let dummy = new ListNode();
     let curr = dummy;
