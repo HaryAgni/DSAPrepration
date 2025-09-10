@@ -27,6 +27,5 @@ var addTwoNumbers = function (l1, l2) {
         p1 = p1 && p1.next;
         p2 = p2 && p2.next;
     }
-
     return dummy.next;
 };
