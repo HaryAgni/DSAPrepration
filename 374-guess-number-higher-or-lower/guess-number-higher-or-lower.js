@@ -12,6 +12,7 @@
  * @return {number}
  */
 var guessNumber = function (n) {
+    
     let start = 1;
     let end = n;
     while (start <= end) {
