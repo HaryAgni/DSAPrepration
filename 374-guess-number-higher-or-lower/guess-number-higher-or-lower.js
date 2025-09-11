@@ -19,7 +19,6 @@ var guessNumber = function (n) {
         let guessed = guess(mid);
         if (guessed == 1) start = mid + 1;
         else if (guessed == -1) end = mid - 1;
-        
         else return mid;
     }
 };
