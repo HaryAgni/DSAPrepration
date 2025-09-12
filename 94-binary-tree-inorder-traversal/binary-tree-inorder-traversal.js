@@ -16,7 +16,6 @@ var inorderTraversal = function (root) {
         if (!curr) {
             return;
         }
-        
         traversal(curr.left);
         ans.push(curr.val);
         traversal(curr.right);
