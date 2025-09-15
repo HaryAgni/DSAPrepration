@@ -13,6 +13,5 @@ var maxArea = function (arr) {
         if (arr[l] > arr[r]) r--;
         else l++;
     }
-    
     return max;
 };
