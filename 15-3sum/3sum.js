@@ -14,7 +14,6 @@ var threeSum = function (nums) {
     return ans;
 
 };
-
 var twoSum = function (curr, nums, ans) {
     let l = curr + 1;
     let r = nums.length - 1;
@@ -28,6 +27,5 @@ var twoSum = function (curr, nums, ans) {
             r--;
             while (nums[l] == nums[l - 1] && l < r) l++;
         }
-
     }
 }
