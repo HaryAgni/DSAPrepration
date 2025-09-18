@@ -12,6 +12,7 @@
  */
 var postorderTraversal = function (root) {
     if (!root) return [];
+    
     let ans = [];
     let s1 = [root];
     let s2 = [];
