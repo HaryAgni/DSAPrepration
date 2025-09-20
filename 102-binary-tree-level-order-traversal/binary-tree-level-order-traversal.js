@@ -12,18 +12,13 @@
  */
 var levelOrder = function (root) {
     if (!root) return [];
-    let q = [root];
     let ans = [];
-    while (q.length) {
-        let len = q.length;
-        let currLevel = [];
-        for (let i = 0; i < len; i++) {
-            let curr = q.shift();
-            currLevel.push(curr.val);
-            curr.left && q.push(curr.left);
-            curr.right && q.push(curr.right);
-        }
-        ans.push(currLevel);
+    var traversal = function (node, level) {
+        if (!ans[level]) ans[level] = [];
+        ans[level].push(node.val);
+        node.left && traversal(node.left, level + 1);
+        node.right && traversal(node.right, level + 1);
     }
+    traversal(root, 0);
     return ans;
 };
