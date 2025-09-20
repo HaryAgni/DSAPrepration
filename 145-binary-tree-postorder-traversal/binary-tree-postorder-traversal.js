@@ -20,5 +20,7 @@ var postorderTraversal = function (root) {
         curr.left && s1.push(curr.left);
         curr.right && s1.push(curr.right);
     }
-    return s2.reverse();
+    let ans = [];
+    while (s2.length) ans.push(s2.pop());
+    return ans;
 };
