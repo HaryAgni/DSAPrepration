@@ -16,8 +16,8 @@ var maxDepth = function (root) {
     var traversal = function (node, level) {
         node.left && traversal(node.left, level + 1);
         node.right && traversal(node.right, level + 1);
-        maxLevel = Math.max(level, maxLevel);
+        maxLevel = Math.max(level + 1, maxLevel);
     }
     traversal(root, 0);
-    return maxLevel + 1;
+    return maxLevel;
 };
