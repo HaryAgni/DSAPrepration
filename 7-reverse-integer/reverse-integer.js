@@ -10,6 +10,7 @@ var reverse = function(x) {
         temp = Math.floor(temp/10);
 
     }
+    
     let limit = Math.pow(2,31);
     if(reverse<-limit || reverse > (limit-1)) return 0;
     return x<0 ? -reverse:reverse;
