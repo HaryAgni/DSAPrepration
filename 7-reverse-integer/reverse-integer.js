@@ -3,7 +3,7 @@
  * @return {number}
  */
 var reverse = function(x) {
-    
+
     let temp =Math.abs(x);
     let reverse =0;
 
@@ -15,5 +15,6 @@ var reverse = function(x) {
 
     let limit = Math.pow(2,31);
     if(reverse<-limit || reverse > (limit-1)) return 0;
+    
     return x<0 ? -reverse:reverse;
 };
