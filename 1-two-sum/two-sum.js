@@ -9,6 +9,5 @@ var twoSum = function (nums, target) {
         let key = target - nums[i];
         if (key in map) return [map[key], i];
         map[nums[i]] = i;
-        
     }
 };
