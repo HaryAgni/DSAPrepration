@@ -12,12 +12,7 @@
  */
 var maxDepth = function (root) {
     if (!root) return 0;
-    let maxLevel = 1;
-    var traversal = function (node, level) {
-        node.left && traversal(node.left, level + 1);
-        node.right && traversal(node.right, level + 1);
-        maxLevel = Math.max(level, maxLevel);
-    }
-    traversal(root, 1);
-    return maxLevel;
+    let leftMax = maxDepth(root.left);
+    let rightMax = maxDepth(root.right);
+    return 1 + Math.max(leftMax, rightMax);
 };
