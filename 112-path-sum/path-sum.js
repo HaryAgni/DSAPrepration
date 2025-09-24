@@ -23,5 +23,6 @@ var hasPathSum = function (root, targetSum) {
         node.right && traversal(node.right, newSum);
     }
     traversal(root, 0);
+    
     return ans;
 };
