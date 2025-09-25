@@ -13,8 +13,13 @@
  */
 var hasPathSum = function (root, targetSum) {
     if (!root) return false;
-    if (!root.left && !root.right && root.val == targetSum) return true;
-    let leftSum = hasPathSum(root.left, targetSum - root.val);
-    let rightSum = hasPathSum(root.right, targetSum - root.val);
-    return leftSum || rightSum;
+    let ans = false;
+    var traversal = function (node, sum) {
+        let newSum = sum + node.val;
+        if (!node.left && !node.right && newSum == targetSum) ans = true;
+        node.left && traversal(node.left, newSum);
+        node.right && traversal(node.right, newSum);
+    }
+    traversal(root, 0);
+    return ans;
 };
