@@ -13,6 +13,7 @@
  */
 var hasPathSum = function (root, targetSum) {
     if (!root) return false;
+    
     let ans = false;
     var traversal = function (node, sum) {
         let newSum = sum + node.val;
