@@ -12,6 +12,7 @@
  */
 var isBalanced = function (root) {
     let ans = true;
+    
     var traversal = function (node) {
         if (!node) return 0;
         let left = traversal(node.left);
