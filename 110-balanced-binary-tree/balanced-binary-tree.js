@@ -11,7 +11,6 @@
  * @return {boolean}
  */
 var isBalanced = function (root) {
-    
     let ans = true;
     var traversal = function (node) {
         if (!node) return 0;
