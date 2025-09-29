@@ -17,7 +17,7 @@ var isBalanced = function (root) {
         if (!node) return 0;
         let left = traversal(node.left);
         let right = traversal(node.right);
-        if (Math.abs(left - right) > 1) ans = ans && false;
+        if (Math.abs(left - right) > 1) ans = false;
         return 1 + Math.max(left, right)
     }
     traversal(root);
