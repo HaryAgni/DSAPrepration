@@ -15,7 +15,6 @@ var zigzagLevelOrder = function (root) {
     let ans = [];
     let q = [root];
     let level = 0;
-    
     while (q.length) {
         let currLevel = [];
         let levelSize = q.length;
