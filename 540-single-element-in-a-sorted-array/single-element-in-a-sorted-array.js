@@ -13,18 +13,13 @@ var singleNonDuplicate = function (nums) {
         let left;
         if (nums[m] == nums[m - 1]) {
             left = m - 1;
-            if (left % 2 == 0) {
-                s = m + 1
-            } else {
-                e = m - 1
-            }
         } else {
             left = m;
-            if (left % 2 == 0) {
-                s = m + 1
-            } else {
-                e = m - 1
-            }
+        }
+        if (left % 2 == 0) {
+            s = m + 1
+        } else {
+            e = m - 1
         }
     }
 };
