@@ -3,10 +3,13 @@
  * @return {boolean}
  */
 var isValidSudoku = function(board) {
+
     let rows = Array.from({length: 9}, () => new Set());
     let cols = Array.from({length: 9}, () => new Set());
     let boxes = Array.from({length: 9}, () => new Set());
+
     for (let r = 0; r < 9; r++) {
+
         for (let c = 0; c < 9; c++) {
             let val = board[r][c];
             if (val === ".") continue;
@@ -18,6 +21,8 @@ var isValidSudoku = function(board) {
             if (boxes[boxIndex].has(val)) return false;
             boxes[boxIndex].add(val);
         }
+
     }
+    
     return true;
 };
