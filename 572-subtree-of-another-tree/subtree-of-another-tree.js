@@ -12,12 +12,12 @@
  * @return {boolean}
  */
 var isSubtree = function (root, subRoot) {
+    var serialize = function (root) {
+        if (!root) return "-#";
+        return `-${root.val}${serialize(root.left)}${serialize(root.right)}`
+    }
     let rootStr = serialize(root);
     let subRootStr = serialize(subRoot);
     return rootStr.includes(subRootStr)
 };
 
-var serialize = function (root) {
-    if (!root) return "-#";
-    return `-${root.val}${serialize(root.left)}${serialize(root.right)}`
-}
