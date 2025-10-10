@@ -4,7 +4,6 @@
  */
 var groupAnagrams = function (strs) {
     let map = {};
-    
     for (let i = 0; i < strs.length; i++) {
         let word = strs[i];
         let freq = Array(26).fill(0);
