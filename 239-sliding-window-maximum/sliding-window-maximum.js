@@ -6,7 +6,6 @@
 var maxSlidingWindow = function (nums, k) {
     let q = [];
     let ans = [];
-
     let i = 0;
     for (let j = 0; j < nums.length; j++) {
         while (q.length && q[q.length - 1] < nums[j]) q.pop();
