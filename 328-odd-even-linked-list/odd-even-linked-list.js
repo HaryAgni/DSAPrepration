@@ -21,5 +21,7 @@ var oddEvenList = function (head) {
         p2 = p2.next;
     }
     p1.next = evenHead;
+
+    
     return head;
 };
