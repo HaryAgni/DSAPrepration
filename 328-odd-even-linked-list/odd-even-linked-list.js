@@ -12,6 +12,7 @@
 var oddEvenList = function (head) {
     if (!head || !head.next) return head;
     let p1 = head;
+    
     let p2 = head.next;
     let evenHead = p2;
     while (p2 && p2.next) {
