@@ -13,7 +13,6 @@
  */
 var guessNumber = function (n) {
     let start = 1;
-
     let end = n;
     while (start <= end) {
         let mid = start + Math.floor((end - start) / 2);
