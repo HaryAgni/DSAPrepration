@@ -22,8 +22,9 @@ var judgePoint24 = function (cards) {
         }
       }
     }
-    return false;
     
+    return false;
+
   }
 
   function compute(a, b) {
