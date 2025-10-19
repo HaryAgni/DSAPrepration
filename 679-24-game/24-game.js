@@ -23,6 +23,7 @@ var judgePoint24 = function (cards) {
       }
     }
     return false;
+    
   }
 
   function compute(a, b) {
