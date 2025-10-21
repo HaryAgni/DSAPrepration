@@ -15,7 +15,6 @@ var reverseStr = function (s, k) {
             left++;
             right--;
         }
-
     }
     return s.join('');
 };
