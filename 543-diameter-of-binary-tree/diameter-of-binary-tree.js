@@ -20,7 +20,6 @@ var diameterOfBinaryTree = function (root) {
         maxDiameter = Math.max(currDiameter, maxDiameter);
         return 1 + Math.max(left, right);
     }
-    
     traversal(root);
     return maxDiameter;
 };
