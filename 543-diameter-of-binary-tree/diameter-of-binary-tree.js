@@ -14,6 +14,7 @@ var diameterOfBinaryTree = function (root) {
     let maxDiameter = 0;
     var traversal = function (node) {
         if (!node) return 0;
+        
         let left = traversal(node.left);
         let right = traversal(node.right);
         let currDiameter = left + right;
