@@ -6,7 +6,6 @@ var lengthOfLongestSubstring = function (s) {
     let map = {};
     let maxWindow = 0;
 
-    
     let i = 0;
     let j = 0;
     while (j < s.length) {
