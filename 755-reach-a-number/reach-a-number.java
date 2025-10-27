@@ -6,7 +6,6 @@ class Solution {
         while(sum<target){
             steps++;
             sum+=steps;
-
         }
         while((sum-target)%2!=0){
             steps++;
