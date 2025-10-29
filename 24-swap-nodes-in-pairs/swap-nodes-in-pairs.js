@@ -10,12 +10,10 @@
  * @return {ListNode}
  */
 var swapPairs = function (head) {
-    if (!head || !head.next) {
-        return head;
-    }
+    if (!head || !head.next) return head;
     let left = head;
     let right = head.next;
-    temp = right.next;
+    let temp = right.next;
     right.next = left;
     left.next = swapPairs(temp);
     return right;
