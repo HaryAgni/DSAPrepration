@@ -11,17 +11,15 @@
  */
 var oddEvenList = function (head) {
     if (!head || !head.next) return head;
-    let p1 = head;
-    let p2 = head.next;
-    let evenHead = p2;
-    while (p2 && p2.next) {
-        p1.next = p2.next;
-        p2.next = p2.next.next;
-        p1 = p1.next;
-        p2 = p2.next;
+    let prev = head;
+    let curr = head.next;
+    let evenHead = head.next;
+    while (curr && curr.next) {
+        prev.next = curr.next;
+        curr.next = curr.next.next;
+        curr = curr.next;
+        prev = prev.next;
     }
-    p1.next = evenHead;
-
-    
+    prev.next = evenHead;
     return head;
 };
