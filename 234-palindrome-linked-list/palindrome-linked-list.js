@@ -16,17 +16,23 @@ var isPalindrome = function (head) {
         slow = slow.next;
         fast = fast.next.next;
     }
-    let prev = null;
-    while (slow) {
-        let temp = slow.next;
-        slow.next = prev;
-        prev = slow;
-        slow = temp;
+
+    let p1 = slow;
+    let p2 = slow.next;
+    while (p1 && p2) {
+        let temp = p2.next;
+        p2.next = p1;
+        p1 = p2;
+        p2 = temp;
     }
-    while (head && prev) {
-        if (head.val !== prev.val) return false;
-        head = head.next;
-        prev = prev.next;
+    slow.next = null;
+    let a = head;
+    let b = p1;
+    while (b) {
+        if (b.val !== a.val) return false;
+        b = b.next;
+        a = a.next;
     }
     return true;
+
 };
