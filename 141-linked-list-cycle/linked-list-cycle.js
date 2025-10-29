@@ -11,7 +11,7 @@
  * @return {boolean}
  */
 var hasCycle = function (head) {
-    if (!head || !head.next) return false;
+    if(!head) return false;
     let set = new Set();
     let curr = head;
     while (curr) {
@@ -20,6 +20,4 @@ var hasCycle = function (head) {
         curr = curr.next;
     }
     return false;
-
-
 };
