@@ -14,10 +14,11 @@
 var getIntersectionNode = function (headA, headB) {
     let p1 = headA;
     let p2 = headB;
-    while (headA || headB) {
+    while (p1 || p2) {
         if (p1 == p2) return p1;
         p1 = p1 ? p1.next : headB;
         p2 = p2 ? p2.next : headA;
+
     }
     return null;
 };
