@@ -6,6 +6,7 @@ class Solution {
         String str = "";
         for(int i =0;i<num.length;i++){
             str = str + num[i];
+            
         }
         BigInteger ans = new BigInteger(str);
         BigInteger res = ans.add(BigInteger.valueOf(k));
