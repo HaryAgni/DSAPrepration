@@ -6,7 +6,6 @@ var trap = function (height) {
     let l = 0;
     let r = height.length - 1;
     let ans = 0;
-    
     let leftMax = height[0];
     let rightMax = height[height.length - 1];
     while (l < r) {
