@@ -10,5 +10,6 @@ var numJewelsInStones = function (jewels, stones) {
         if (set.has(stones[i])) count++;
     }
   
+  
     return count;
 };
