@@ -2,6 +2,7 @@ class Solution {
     public int[] fairCandySwap(int[] arr1, int[] arr2) {
         Arrays.sort(arr2);
         int[] ans = new int[2];
+        
         int sum1 =0;
         int sum2 =0;
         for(int x:arr1){
