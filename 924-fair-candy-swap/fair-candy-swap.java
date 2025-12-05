@@ -4,7 +4,6 @@ class Solution {
         int[] ans = new int[2];
         int sum1 =0;
         int sum2 =0;
-        
         for(int x:arr1){
             sum1+=x;
         }
