@@ -4,6 +4,7 @@ class Solution {
     public List<Integer> addToArrayForm(int[] num, int k) {
       ArrayList<Integer> mylist = new ArrayList<>();
         String str = "";
+        
         for(int i =0;i<num.length;i++){
             str = str + num[i];
             
