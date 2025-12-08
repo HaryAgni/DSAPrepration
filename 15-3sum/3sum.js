@@ -12,7 +12,6 @@ var threeSum = function (nums) {
         }
     }
     return ans;
-
 };
 var twoSum = function (curr, nums, ans) {
     let l = curr + 1;
