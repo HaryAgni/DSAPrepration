@@ -10,7 +10,6 @@ class Solution {
             else if(arr[mid]<target){
                 start = mid+1;
             }
-            
             else{
                 end = mid -1;
             }
