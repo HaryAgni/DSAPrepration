@@ -11,7 +11,7 @@
  * @return {boolean}
  */
 var isSymmetric = function (root) {
-    let q = [root.left, root.right];
+   let q = [root.left, root.right];
     while (q.length) {
         let p1 = q.shift();
         let p2 = q.shift();
