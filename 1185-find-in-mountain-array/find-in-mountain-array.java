@@ -10,13 +10,13 @@
 class Solution {
     public int findInMountainArray(int target, MountainArray mountainArr) {
         int peak = findPeakElement(mountainArr);
+        
         int firstTry = binarySearch(mountainArr,target,0,peak);
         if(firstTry!=-1){
             return firstTry;
         }
         else return binarySearch(mountainArr,target,peak+1,mountainArr.length()-1);
     }
-
      public int findPeakElement(MountainArray arr) {
         
       int start =0; int end = arr.length()-1;
