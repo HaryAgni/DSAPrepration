@@ -11,15 +11,15 @@
  */
 var reverseList = function (head) {
     if (!head || !head.next) return head;
-    let p1 = head;
-    let p2 = head.next;
-    while (p1 && p2) {
-        let temp = p2.next;
-        p2.next = p1;
-        p1 = p2;
-        p2 = temp;
+    let prev = null;
+    let curr = head;
+    while (curr && curr.next) {
+        let temp = curr.next;
+        curr.next = prev;
+        prev = curr;
+        curr = temp;
     }
-    head.next = null;
-    return p1;
+    curr.next = prev;
+    return curr;
 
 };
