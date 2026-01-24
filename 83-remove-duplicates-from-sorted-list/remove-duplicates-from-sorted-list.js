@@ -11,15 +11,12 @@
  */
 var deleteDuplicates = function (head) {
     if (!head || !head.next) return head;
-    let prev = head;
-    let curr = head.next;
-    while (curr) {
-        if (prev.val !== curr.val) {
-            prev.next = curr;
-            prev = curr;
-        }
-        curr = curr.next;
+    let dummy = new ListNode(null, head);
+    let prev = dummy;
+    while (prev && prev.next) {
+        if (prev.val == prev.next.val) prev.next = prev.next.next;
+        else prev = prev.next;
+
     }
-    prev.next = null;
-    return head;
+    return dummy.next;
 };
