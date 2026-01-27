@@ -13,17 +13,17 @@
 var addTwoNumbers = function (l1, l2) {
     let dummy = new ListNode();
     let curr = dummy;
+    let carry = 0;
     let p1 = l1;
     let p2 = l2;
-    let carry = 0;
     while (p1 || p2 || carry) {
         let sum = (p1 && p1.val) + (p2 && p2.val) + carry;
+        let val = sum % 10;
         carry = Math.floor(sum / 10);
-        curr.next = new ListNode(sum % 10);
+        curr.next = new ListNode(val);
         p1 = p1 && p1.next;
         p2 = p2 && p2.next;
         curr = curr.next;
     }
     return dummy.next;
-
 };
