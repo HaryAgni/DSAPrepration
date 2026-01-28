@@ -3,18 +3,17 @@
  * @return {number}
  */
 var maxFreqSum = function (s) {
-    let set = new Set('aeiou');
     let map = {};
+    let set = new Set('aeiou');
     for (let i = 0; i < s.length; i++) {
         map[s[i]] = map[s[i]] ? ++map[s[i]] : 1;
     }
+    cMax = 0;
+    vMax = 0;
     let keys = Object.keys(map);
-    let cMax = 0;
-    let vMax = 0;
     for (let i = 0; i < keys.length; i++) {
-        let val = map[keys[i]];
-        if (set.has(keys[i])) vMax = Math.max(vMax, val);
-        else cMax = Math.max(cMax, val);
+        if (set.has(keys[i])) vMax = Math.max(vMax, map[keys[i]])
+        else cMax = Math.max(cMax, map[keys[i]])
     }
     return vMax + cMax;
 };
