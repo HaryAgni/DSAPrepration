@@ -11,6 +11,7 @@
  * @return {ListNode}
  */
 var mergeTwoLists = function (list1, list2) {
+    if (!list1 || !list2) return list1 || list2;
     let dummy = new ListNode();
     let p1 = list1;
     let p2 = list2;
