@@ -12,28 +12,26 @@
  */
 var rotateRight = function (head, k) {
     if (!head || !head.next) return head;
-    let curr = head;
     let size = 0;
-
-    
-
+    let curr = head;
     while (curr) {
-        curr = curr.next;
         size++;
+        curr = curr.next;
     }
     k = k % size;
     if (k == 0) return head;
-    let slow = head;
     let fast = head;
-    for (i = 0; i < k; i++) {
+    let slow = head;
+    for (let i = 0; i < k; i++) {
         fast = fast.next;
     }
-    while (fast && fast.next) {
-        slow = slow.next;
+    while (fast.next) {
         fast = fast.next;
+        slow = slow.next;
     }
     let temp = slow.next;
     slow.next = null;
     fast.next = head;
     return temp;
+
 };
