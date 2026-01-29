@@ -3,17 +3,19 @@
  * @return {boolean}
  */
 var isPalindrome = function (s) {
-    let set = new Set("abcdefghijklmnopqrstuvwxyz1234567890");
-    let i = 0;
-    
-    let j = s.length - 1;
-    while (i < j) {
-        if (!set.has(s[i].toLowerCase())) i++;
-        else if (!set.has(s[j].toLowerCase())) j--;
-        else if (s[i].toLowerCase() !== s[j].toLowerCase()) return false;
+    let set = new Set('abcdefghijklmnopqrstuvwxyz1234567890');
+    let l = 0;
+    let r = s.length - 1;
+    while (l < r) {
+        let a = s[l].toLowerCase();
+        let b = s[r].toLowerCase();
+        console.log(a,b)
+        if (!set.has(a)) l++;
+        else if (!set.has(b)) r--;
+        else if (a !== b) return false;
         else {
-            i++;
-            j--;
+            l++;
+            r--;
         }
     }
     return true;
