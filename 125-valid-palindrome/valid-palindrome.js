@@ -9,7 +9,6 @@ var isPalindrome = function (s) {
     while (l < r) {
         let a = s[l].toLowerCase();
         let b = s[r].toLowerCase();
-        console.log(a,b)
         if (!set.has(a)) l++;
         else if (!set.has(b)) r--;
         else if (a !== b) return false;
