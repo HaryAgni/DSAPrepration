@@ -10,7 +10,7 @@ var groupAnagrams = function (strs) {
         let key = "";
         for (let j = 0; j < val.length; j++) {
             let index = val[j].charCodeAt(0) - 'a'.charCodeAt(0);
-            freq[index] = ++freq[index];
+            ++freq[index];
         }
         for (let j = 0; j < 26; j++) {
             key += '#' + freq[j];
