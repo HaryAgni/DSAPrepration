@@ -4,6 +4,7 @@
  */
 var dailyTemperatures = function (nums) {
     let ans = Array(nums.length).fill(0);
+    
     let stack = [];
     for (let i = nums.length - 1; i >= 0; i--) {
         while (stack.length) {
