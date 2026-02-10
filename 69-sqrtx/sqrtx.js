@@ -3,7 +3,7 @@
  * @return {number}
  */
 var mySqrt = function (x) {
-    let l = 0;
+    let l = 2;
     let r = Math.ceil(x / 2);
     while (l <= r) {
         let mid = Math.floor((l + r) / 2);
