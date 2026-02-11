@@ -21,5 +21,6 @@ var guessNumber = function (n) {
         else if (check == 1) start = mid + 1;
         else return mid;
     }
+    
     return start;
 };
