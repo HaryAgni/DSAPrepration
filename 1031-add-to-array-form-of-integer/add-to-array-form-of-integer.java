@@ -16,6 +16,7 @@ class Solution {
             mylist.add(a);
             st = "";
         }
+        
         return mylist;
     }
 }
