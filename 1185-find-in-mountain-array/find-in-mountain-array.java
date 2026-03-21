@@ -15,7 +15,6 @@ class Solution {
         }
         else return binarySearch(mountainArr,target,peak+1,mountainArr.length()-1);
     }
-    
      public int findPeakElement(MountainArray arr) {
       int start =0; int end = arr.length()-1;
         int mid =0;
