@@ -11,7 +11,6 @@ var removeDuplicates = function (nums) {
             i++;
         }
         j++;
-        
     }
     return i+1;
 };
