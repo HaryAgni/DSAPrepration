@@ -12,9 +12,9 @@ var MyLinkedList = function () {
  * @return {number}
  */
 MyLinkedList.prototype.get = function (index) {
-    if (index >= this.size || index < 0) return -1;
+    if (this.size == 0 || index >= this.size || index < 0) return -1;
     let curr = this.head;
-    for (i = 0; i < index; i++) {
+    for (let i = 0; i < index; i++) {
         curr = curr.next;
     }
     return curr.val;
@@ -36,16 +36,16 @@ MyLinkedList.prototype.addAtHead = function (val) {
  * @return {void}
  */
 MyLinkedList.prototype.addAtTail = function (val) {
-    if (this.size == 0) this.addAtHead(val);
-    else {
-        let curr = this.head;
-        while (curr && curr.next) {
-            curr = curr.next;
-        }
-        curr.next = new ListNode(val);
-        this.size++;
+    if(this.size==0){
+        this.addAtHead(val);
+        return;
     }
-
+    let curr = this.head;
+    while (curr.next) {
+        curr = curr.next;
+    }
+    curr.next = new ListNode(val);
+    this.size++;
 };
 
 /** 
@@ -54,17 +54,17 @@ MyLinkedList.prototype.addAtTail = function (val) {
  * @return {void}
  */
 MyLinkedList.prototype.addAtIndex = function (index, val) {
-    if (index > this.size || index < 0) return;
+    if (index < 0 || index > this.size) return;
+    if (index == 0) this.addAtHead(val);
     else if (index == this.size) this.addAtTail(val);
-    else if (index == 0) this.addAtHead(val);
     else {
         let curr = this.head;
         for (let i = 0; i < index - 1; i++) {
             curr = curr.next;
         }
-        let node = new ListNode(val);
-        node.next = curr.next;
-        curr.next = node;
+        let temp = curr.next;
+        curr.next = new ListNode(val);
+        curr.next.next = temp;
         this.size++;
     }
 };
@@ -75,13 +75,14 @@ MyLinkedList.prototype.addAtIndex = function (index, val) {
  */
 MyLinkedList.prototype.deleteAtIndex = function (index) {
     if (index < 0 || index >= this.size) return;
-    else if (index == 0) this.head = this.head.next;
+    if (index == 0) this.head = this.head.next;
     else {
         let curr = this.head;
         for (let i = 0; i < index - 1; i++) {
             curr = curr.next;
         }
         curr.next = curr.next.next;
+
     }
     this.size--;
 };
