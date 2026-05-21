@@ -17,8 +17,8 @@ var isPalindrome = function (head) {
         slow = slow.next;
         fast = fast.next.next;
     }
-    let curr = slow.next;
     let prev = null;
+    let curr = slow.next;
     slow.next = null;
     while (curr) {
         let temp = curr.next;
@@ -34,6 +34,4 @@ var isPalindrome = function (head) {
         p2 = p2.next;
     }
     return true;
-
-
 };
