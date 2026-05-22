@@ -13,13 +13,13 @@ var oddEvenList = function (head) {
     if (!head || !head.next) return head;
     let prev = head;
     let curr = head.next;
-    let head2 = curr;
+    let evenHead = curr;
     while (curr && curr.next) {
-        prev.next = prev.next.next;
-        curr.next = curr.next.next;
-        curr = prev.next.next;
+        prev.next = curr.next;
+        curr.next = curr.next.next
         prev = prev.next;
+        curr = curr.next;
     }
-    prev.next = head2;
+    prev.next = evenHead;
     return head;
 };
