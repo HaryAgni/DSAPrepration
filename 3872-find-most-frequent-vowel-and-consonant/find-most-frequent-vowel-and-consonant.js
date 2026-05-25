@@ -6,7 +6,7 @@ var maxFreqSum = function (s) {
     let set = new Set('aeiou');
     let map = {};
     for (let i = 0; i < s.length; i++) {
-        if (map[s[i]]) map[s[i]]++;
+        if (s[i] in map) map[s[i]]++;
         else map[s[i]] = 1;
     }
     let vMax = 0;
