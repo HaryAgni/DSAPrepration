@@ -4,10 +4,10 @@
  * @return {string}
  */
 var reverseStr = function (s, k) {
-    s = s.split('')
-    for (let i = 0; i < s.length; i = i + (k * 2)) {
+    s = s.split("");
+    for (let i = 0; i < s.length; i = (2 * k) + i) {
         let l = i;
-        let r = Math.min(i + k - 1, s.length - 1);
+        let r = Math.min(l + k - 1, s.length - 1);
         while (l < r) {
             let temp = s[l];
             s[l] = s[r];
@@ -16,5 +16,5 @@ var reverseStr = function (s, k) {
             r--;
         }
     }
-    return s.join('');
+    return s.join("");
 };
