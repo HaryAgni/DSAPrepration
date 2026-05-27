@@ -15,30 +15,29 @@ MyStack.prototype.push = function (x) {
  * @return {number}
  */
 MyStack.prototype.pop = function () {
-    for (let i = this.q.length - 1; i > 0; i--) {
+    for (let i = 0; i < this.q.length - 1; i++) {
         this.q.push(this.q.shift());
     }
-    let ele = this.q.shift();
-    return ele;
+    return this.q.shift();
 };
 
 /**
  * @return {number}
  */
 MyStack.prototype.top = function () {
-    for (let i = this.q.length - 1; i > 0; i--) {
+    for (let i = 0; i < this.q.length - 1; i++) {
         this.q.push(this.q.shift());
     }
-    let ele = this.q.shift();
-    this.q.push(ele);
-    return ele;
+    let val = this.q.shift();
+    this.q.push(val);
+    return val;
 };
 
 /**
  * @return {boolean}
  */
 MyStack.prototype.empty = function () {
-    return this.q.length == 0;
+    return !this.q.length;
 };
 
 /** 
