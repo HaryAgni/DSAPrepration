@@ -5,18 +5,17 @@
 var groupAnagrams = function (strs) {
     let map = {};
     for (let i = 0; i < strs.length; i++) {
-        let val = strs[i];
-        let freq = Array(26).fill(0);
+        let arr = Array(26).fill(0);
+        for (let j = 0; j < strs[i].length; j++) {
+            let index = strs[i][j].charCodeAt(0) - 'a'.charCodeAt(0);
+            ++arr[index];
+        }
         let key = "";
-        for (let j = 0; j < val.length; j++) {
-            let index = val[j].charCodeAt(0) - 'a'.charCodeAt(0);
-            ++freq[index];
-        }
         for (let j = 0; j < 26; j++) {
-            key += '#' + freq[j];
+            key += '#' + arr[j];
         }
-        if (!map[key]) map[key] = [val];
-        else map[key].push(val);
+        if (map[key]) map[key].push(strs[i]);
+        else map[key] = [strs[i]];
     }
-    return Object.keys(map).map(val => map[val]);
+    return Object.values(map);
 };
