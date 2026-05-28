@@ -7,16 +7,16 @@ var nextGreaterElement = function (nums1, nums2) {
     let stack = [];
     let map = {};
     for (let i = nums2.length - 1; i >= 0; i--) {
-        let ans = -1;
+        let temp = -1;
         while (stack.length) {
             let top = stack[stack.length - 1];
             if (top > nums2[i]) {
-                ans = top;
+                temp = top;
                 break;
             }
             else stack.pop();
         }
-        map[nums2[i]] = ans;
+        map[nums2[i]] = temp;
         stack.push(nums2[i]);
     }
     return nums1.map(val => map[val]);
