@@ -4,24 +4,20 @@
  * @return {number[]}
  */
 var nextGreaterElement = function (nums1, nums2) {
-    let map = {};
     let stack = [];
+    let map = {};
     for (let i = nums2.length - 1; i >= 0; i--) {
-        let val = -1;
+        let ans = -1;
         while (stack.length) {
             let top = stack[stack.length - 1];
-            if (top <= nums2[i]) stack.pop();
-            else {
-                val = top;
+            if (top > nums2[i]) {
+                ans = top;
                 break;
             }
+            else stack.pop();
         }
-        map[nums2[i]] = val;
+        map[nums2[i]] = ans;
         stack.push(nums2[i]);
     }
-    let ans =[];
-    for(let i =0;i<nums1.length;i++){
-        ans.push(map[nums1[i]]);
-    }
-    return ans;
+    return nums1.map(val => map[val]);
 };
