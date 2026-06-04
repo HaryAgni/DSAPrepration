@@ -3,14 +3,14 @@
  * @return {number}
  */
 var findMin = function (nums) {
-    let start = 0;
-    let end = nums.length - 1;
-    while (start < end) {
-        if (nums[start] <= nums[end]) return nums[start];
-        let mid = start + Math.floor((end - start) / 2);
-        if (nums[mid] > nums[mid + 1]) return nums[mid + 1];
-        else if (nums[start] < nums[mid]) start = mid + 1;
-        else end = mid;
+    let l = 0;
+    let r = nums.length - 1;
+    while (l < r) {
+        let mid = Math.floor((l + r) / 2);
+        if (nums[l] <= nums[r]) return nums[l];
+        else if (nums[mid] > nums[mid + 1]) return nums[mid + 1];
+        else if (nums[mid] > nums[l]) l = mid;
+        else r = mid;
     }
-    return nums[start];
+    return nums[l];
 };
