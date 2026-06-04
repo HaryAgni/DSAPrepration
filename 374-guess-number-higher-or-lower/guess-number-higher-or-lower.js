@@ -12,14 +12,14 @@
  * @return {number}
  */
 var guessNumber = function (n) {
-    let start = 1;
-    let end = n;
-    while (start <= end) {
-        let mid = Math.floor((start + end) / 2);
-        let check = guess(mid);
-        if (check == -1) end = mid - 1;
-        else if (check == 1) start = mid + 1;
+    let l = 1;
+    let r = n;
+    while (l <= r) {
+        let mid = Math.floor((r + l) / 2);
+        let temp = guess(mid);
+        if (temp == -1) r = mid - 1;
+        else if (temp == 1) l = mid + 1
         else return mid;
     }
-    return start;
+    return r;
 };
