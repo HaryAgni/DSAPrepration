@@ -6,7 +6,6 @@
  *     public int length() {}
  * }
  */
- 
 class Solution {
     public int findInMountainArray(int target, MountainArray mountainArr) {
         int peak = findPeakElement(mountainArr);
